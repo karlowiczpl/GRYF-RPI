@@ -1,4 +1,4 @@
-include(${CMAKE_SOURCE_DIR}/lib/pico-sdk/external/pico_sdk_import.cmake)
+include(${LIBRARY_DIR}/pico-sdk/external/pico_sdk_import.cmake)
 
 add_library(PICO_SDK_FILES STATIC)
 
