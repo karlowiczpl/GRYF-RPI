@@ -1,0 +1,4 @@
+#ifndef HARDWARE_ASSERT_H
+#define HARDWARE_ASSERT_H
+
+#endif // !HARDWARE_ASSERT_H

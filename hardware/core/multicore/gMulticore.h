@@ -1,0 +1,4 @@
+#ifndef HARDWARE_MULTICORE_H
+#define HARDWARE_MULTICORE_H
+
+#endif /* ifndef HARDWARE_MULTICORE_H */
