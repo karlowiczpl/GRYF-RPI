@@ -10,5 +10,7 @@ extern char status_command_buffor[STATUS_COMMAND_BUFFOR_SIZE];
 void build_input_status_command(uint8_t* states, uint8_t id);
 void build_output_status_command(uint8_t* states, uint8_t id);
 void build_temperature_status_command(uint8_t* temp, uint8_t id, uint8_t pin);
+void build_ps_status_command(uint8_t id, uint8_t pin);
+void build_pl_status_command(uint8_t id, uint8_t pin);
 
 #endif // !ABSTRACT_COMMAND_BUILDER_H

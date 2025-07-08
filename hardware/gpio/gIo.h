@@ -17,4 +17,7 @@ uint8_t update_outputs();
 
 void gpio_set_out(uint8_t num, uint8_t state);
 
+static void check_ps(uint8_t num);
+static void check_pl();
+
 #endif // !HARDWARE_GPIO_INPUTS_H

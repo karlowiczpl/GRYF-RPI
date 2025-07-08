@@ -5,11 +5,11 @@
 *     GPIO CONFIG
 */
 
-#define GPIO_OUT_COUNT  6
-#define GPIO_IN_COUNT   1
+#define GPIO_OUT_COUNT  1
+#define GPIO_OUT_PINS {2}
 
-#define GPIO_IN_PINS {2}
-#define GPIO_OUT_PINS {3, 4, 5, 6, 7, 8}
+#define GPIO_IN_COUNT   8
+#define GPIO_IN_PINS {3, 4, 5, 6, 7, 8, 9, 10}
 
 /*
 *     IP CONFIG

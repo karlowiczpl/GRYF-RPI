@@ -11,6 +11,8 @@ const char inputStatePrefix[] = "I";
 const char outputStatePrefix[] = "O";
 const char shutterStatePrefix[] = "R";
 const char tempStatePrefix[] = "T";
+const char psStatePrefix[] = "PS";
+const char plStatePrefix[] = "PL";
 
 void build_input_status_command(uint8_t* states, uint8_t id)
 {
@@ -65,4 +67,14 @@ void build_temperature_status_command(uint8_t* temp, uint8_t id, uint8_t pin)
           temp[1],
           temp[0]
   );
+}
+
+void build_ps_status_command(uint8_t id, uint8_t pin)
+{
+  sprintf(status_command_buffor, "%s=%d,%d\n\r", psStatePrefix, id, pin);
+}
+
+void build_pl_status_command(uint8_t id, uint8_t pin)
+{
+  sprintf(status_command_buffor, "%s=%d,%d\n\r", plStatePrefix, id, pin);
 }
