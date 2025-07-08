@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(PICO_SDK_PATH ${CMAKE_CURRENT_LIST_DIR}/lib/pico-sdk)
+set(WIZNET_DIR ${CMAKE_CURRENT_LIST_DIR}/lib/ioLibrary_Driver)
 
 include(${CMAKE_SOURCE_DIR}/port/pico-sdk/pico_sdk_config.cmake)
 include(${CMAKE_SOURCE_DIR}/port/mbedtls/mbedtls_config.cmake)

@@ -5,10 +5,12 @@ set(WIZNET-PICO-C_SDK_VERSION_STRING "${WIZNET-PICO-C_SDK_VERSION_MAJOR}.${WIZNE
 
 message(STATUS "WIZNET-PICO-C SDK version is ${WIZNET-PICO-C_SDK_VERSION_STRING}")
 
-set(WIZNET_DIR ${CMAKE_SOURCE_DIR}/lib/ioLibrary_Driver)
-set(PICO_SDK_DIR ${CMAKE_SOURCE_DIR}/lib/pico-sdk)
-
 add_library(ETHERNET_FILES STATIC)
+
+add_definitions(
+    -D_WIZCHIP_=${WIZNET_CHIP}
+    -DDEVICE_BOARD_NAME=${BOARD_NAME}
+)
 
 target_sources(ETHERNET_FILES PUBLIC
   ${WIZNET_DIR}/Ethernet/socket.c
