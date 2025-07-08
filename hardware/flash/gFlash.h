@@ -10,6 +10,7 @@ typedef struct
   uint8_t* sn[4];
   uint8_t* gw[4];
 }EEPROM_DATA_T;
+extern EEPROM_DATA_T eeprom_data;
 
 void write_eeprom();
 void read_eeprom();

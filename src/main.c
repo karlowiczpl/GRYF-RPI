@@ -6,6 +6,9 @@
 #include <pico/multicore.h>
 
 #include "gUart.h"
+#include "gIo.h"
+#include "gCommand_builder.h"
+#include "gFlash.h"
 
 void communication_core();
 void task_core();
@@ -13,8 +16,7 @@ void task_core();
 int main()
 {
   stdio_init_all();
-
-  
+  read_eeprom();
 
   multicore_launch_core1(communication_core);
 
@@ -42,8 +44,20 @@ void communication_core()
 
 void task_core()
 {
+  setup_io();
+
   while(1)
   {
-
+    if(update_inputs())
+    {
+      build_input_status_command(input_states, eeprom_data.id);
+      uart_send(status_command_buffor);
+    }
+    
+    if(update_outputs())
+    {
+      build_output_status_command(input_states, eeprom_data.id);
+      uart_send(status_command_buffor);
+    }
   }
 }

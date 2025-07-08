@@ -35,4 +35,5 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
   PICO_SDK_FILES
 
   HARDWARE_FILES
+  ABSTRACT_FILES
 )
