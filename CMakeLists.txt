@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(LIBRARY_DIR ${CMAKE_CURRENT_LIST_DIR}/lib)
+set(PICO_SDK_PATH ${CMAKE_CURRENT_LIST_DIR}/lib/pico-sdk)
 
 include(${CMAKE_SOURCE_DIR}/port/pico-sdk/pico_sdk_config.cmake)
 include(${CMAKE_SOURCE_DIR}/port/mbedtls/mbedtls_config.cmake)
@@ -18,6 +18,8 @@ pico_sdk_init()
 add_executable(${PROJECT_NAME}
   src/main.c
 )
+
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/tests)
 
 pico_enable_stdio_usb(${PROJECT_NAME} 1)
 pico_enable_stdio_uart(${PROJECT_NAME} 1)
