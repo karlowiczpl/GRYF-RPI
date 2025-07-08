@@ -5,6 +5,9 @@
 *     GPIO CONFIG
 */
 
+#define GPIO_OUT_COUNT  6
+#define GPIO_IN_COUNT   1
+
 /*
 *     IP CONFIG
 */

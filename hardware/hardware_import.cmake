@@ -27,6 +27,8 @@ target_link_libraries(HARDWARE_FILES PUBLIC
   DNS_FILES
 
   LOOPBACK_FILES
+ 
+  GRYF_CONFIG
 )
 
 target_sources(HARDWARE_FILES PUBLIC

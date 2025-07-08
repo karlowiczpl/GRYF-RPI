@@ -26,6 +26,11 @@ pico_enable_stdio_usb(${PROJECT_NAME} 1)
 pico_enable_stdio_uart(${PROJECT_NAME} 1)
 pico_add_extra_outputs(${PROJECT_NAME})
 
+add_library(GRYF_CONFIG INTERFACE)
+target_include_directories(GRYF_CONFIG INTERFACE
+  ${CMAKE_CURRENT_LIST_DIR}
+)
+
 target_link_libraries(${PROJECT_NAME} PUBLIC
   PICO_SDK_FILES
 
