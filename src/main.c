@@ -5,7 +5,6 @@
 #include <pico/stdlib.h>
 #include <pico/multicore.h>
 
-#include "gFlash.h"
 #include "gUart.h"
 
 void communication_core();

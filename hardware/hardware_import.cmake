@@ -14,6 +14,8 @@ target_include_directories(HARDWARE_FILES PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/core/reset
   
   ${CMAKE_CURRENT_LIST_DIR}/flash
+
+  ${CMAKE_CURRENT_LIST_DIR}/gpio
 )
 
 target_link_libraries(HARDWARE_FILES PUBLIC
@@ -44,4 +46,6 @@ target_sources(HARDWARE_FILES PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/core/reset/gReset.c
 
   ${CMAKE_CURRENT_LIST_DIR}/flash/gFlash.c
+
+  ${CMAKE_CURRENT_LIST_DIR}/gpio/gIo.c
 )
