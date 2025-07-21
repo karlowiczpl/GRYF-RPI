@@ -17,7 +17,7 @@ const uint8_t input_pins[GPIO_IN_COUNT] = GPIO_IN_PINS;
 const uint8_t output_pins[GPIO_OUT_COUNT] = GPIO_OUT_PINS;
 
 absolute_time_t last_change_time[GPIO_IN_COUNT];
-uint8_t pl_enabled[GPIO_OUT_COUNT] = {0};
+uint8_t pl_enabled[GPIO_IN_COUNT] = {0};
 
 void setup_io()
 {

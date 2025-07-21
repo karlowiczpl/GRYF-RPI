@@ -1,14 +1,17 @@
-#include <pico/time.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 #include <pico/stdlib.h>
 #include <pico/multicore.h>
 
+#include "AT-Commands-Lib/parser.h"
 #include "gUart.h"
 #include "gIo.h"
 #include "gCommand_builder.h"
 #include "gFlash.h"
+
+#include "parser.h"
 
 void communication_core();
 void task_core();
@@ -29,13 +32,12 @@ void communication_core()
 
   while(1)
   {
-    if(uart_data.buf_num)
+    for(uint8_t i = 0; i < uart_data.buf_num; i++)
     {
-      printf("UART BUFFOR: \n");
-      for(uint8_t i = 0; i < 5; i++)
-      {
-        if(uart_data.buf[i][0] != '\0')     printf("%s\n", uart_data.buf[i]);
-      }
+      char at_command[50];
+      strncpy(at_command, (const char*)uart_data.buf[i], sizeof(at_command) - 1);
+
+      parse_at_command(at_command);
     }
 
     sleep_ms(5000);
